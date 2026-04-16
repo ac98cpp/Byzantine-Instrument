@@ -17,14 +17,7 @@
 
     // ----- High‑frequency cut compensation -----
     function getLoudnessCompensation(freq) {
-        const f = Math.max(20, Math.min(20000, freq));
-        if (f < 200) {
-            return 2.0 - (f - 20) * (1.0 / 180);
-        } else if (f < 500) {
-            return 1.0 + (500 - f) * (1.0 / 300);
-        } else {
-            return Math.max(0.1, 1.0 / (1.0 + (f - 500) * 0.002));
-        }
+        return 1.0;   // no boost, no cut – flat response
     }
 
     // ----- Ensure AudioContext & masterGain -----
