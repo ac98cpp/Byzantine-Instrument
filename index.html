@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <p>0.2.0</p>
+    <p>0.2.1</p>
     <label for="instrument-select">Sample:</label>
     <select id="instrument-select">
         <option value="voice" selected>melodos</option>
@@ -395,7 +395,18 @@
     <!-- Main application -->
     <script type="module" src="./assets/js/modules/script.js"></script>
 
+    <!-- Code injected by live-server -->
+    <script>
 
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('SW registered!', reg))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+
+    </script>
 </body>
 
 
