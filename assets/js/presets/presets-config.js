@@ -128,10 +128,10 @@ const presets = [
         },
         imageMap: [
             // Row 1 – all 8 columns get dieseis_4
-            { row: 1, columns: [3], image: './assets/symbols/ichos/pl-d/gha/bGha_zoL.png' },
+            { row: 5, columns: [3], image: './assets/symbols/ichos/pl-d/gha/bGha_zoL.png' },
             // Row 2 – all 8 columns get dieseis_2
 
-            { row: 2, columns: [2], image: './assets/symbols/ichos/pl-d/gha/bGha_keL.png' },
+            { row: 4, columns: [2], image: './assets/symbols/ichos/pl-d/gha/bGha_keL.png' },
 
             // Row 3 – each column gets a specific diatonic symbol
             { row: 3, columns: [1], image: './assets/symbols/ichos/pl-d/gha/bGha_diL.png' },
