@@ -27,7 +27,7 @@
 .scale-wrapper {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     overflow-x: auto;
     /* ← wrapper scrolls horizontally */
@@ -40,11 +40,7 @@
     user-select: none;
 }
 
-/* Optional: when in full‑screen mode, you may want to adjust padding or background */
-.scale-wrapper:fullscreen {
-    background: #fff;
-    /* height and width are automatically set to 100% of the screen */
-}
+
 
 .scale-container {
     display: flex;
