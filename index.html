@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <p>0.2.3</p>
+    <p>0.2.4</p>
     <label for="instrument-select">Sample:</label>
     <select id="instrument-select">
         <option value="voice" selected>melodos</option>
@@ -19,9 +19,9 @@
     </select>
 
 
-    <div class="wrapper-ichos">
+    <div class="wrapper-media-controls">
         <div style="margin: 10px 0; display: flex; align-items: center; gap: 10px;">
-            <button id="slider-play-btn" class="preset-btn" style="width: 60px;">▶ Play</button>
+            <button id="slider-play-btn" style="width: 60px;">▶ Play</button>
             <input type="range" id="freq-slider" class="volume-slider" style="width: 200px;" min="20" max="2000"
                 step="1" value="440" disabled>
             <span id="freq-display" style="font-size: 14px; min-width: 70px;"></span>
@@ -37,12 +37,26 @@
     <!-- Frequency Slider Section (super minimal) -->
 
     <!-- BUTTON SCALES -->
-    <button class="preset-btn" id="pl_D_Ni"
-        style="background-image: url('./assets/symbols/ichos/pl-d/ni/img-button.png'); width: 50px;
-        height: 50px; background-repeat: no-repeat;background-size: contain; margin-bottom: 10px; margin-left: 10%;"></button>
-    <button class="preset-btn" id="pl_D_Gha"
-        style="background-image: url('./assets/symbols/ichos/pl-d/gha/img-button.png'); width: 50px;
-                height: 50px; background-repeat: no-repeat;background-size: contain; margin-bottom: 10px; margin-left: 5px;"></button>
+    <div class="wrapper-tones">
+        <p>Ήχος πλ.δ'</p>
+
+        <div style="display: flex; gap: 5px;">
+            <button class="preset-btn" id="pl_D_Ni"
+                style="background-image: url('./assets/symbols/ichos/pl-d/ni/img-button.png');"></button>
+            <button class="preset-btn" id="pl_D_Gha"
+                style="background-image: url('./assets/symbols/ichos/pl-d/gha/img-button.png');"></button>
+        </div>
+    </div>
+
+    <div class="wrapper-tones">
+        <p>ήχος β΄</p>
+
+        <div style="display: flex; gap: 5px;">
+            <button class="preset-btn" id="ichos_b_di_soft-chromatic"
+                style="background-image: url('./assets/symbols/ichos/b/di-soft-chromatic/img-button.png');"></button>
+
+        </div>
+    </div>
 
     <div class="scale-wrapper">
         <!-- Row 1 -->
@@ -108,9 +122,6 @@
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
-
-
-
         </div>
 
         <!-- Row 2 -->
@@ -176,9 +187,6 @@
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
-
-
-
         </div>
 
         <!-- Row 3 -->
@@ -244,9 +252,6 @@
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
-
-
-
         </div>
 
         <!-- Row 4 -->
@@ -312,9 +317,6 @@
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
-
-
-
         </div>
 
         <!-- Row 5 -->
@@ -380,13 +382,9 @@
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
-
-
-
         </div>
-
-
     </div>
+
 
     <!-- Configuration files -->
     <script src="./assets/js/presets/presets-config.js"></script>
@@ -395,7 +393,6 @@
     <!-- Main application -->
     <script type="module" src="./assets/js/modules/script.js"></script>
 
-    <!-- Code injected by live-server -->
     <script>
 
         if ('serviceWorker' in navigator) {

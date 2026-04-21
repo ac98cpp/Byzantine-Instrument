@@ -382,6 +382,10 @@
                 const NO_IMAGE = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
                 document.querySelectorAll('.martiria .center-png, .martiria .topright-png').forEach(img => img.src = NO_IMAGE);
 
+                document.querySelectorAll('.martiria').forEach(el => {
+                    el.style.backgroundColor = 'rgb(231, 231, 231)';
+                });
+
                 // Apply images
                 preset.imageMap.forEach(entry => {
                     const row = entry.row;
@@ -401,6 +405,17 @@
                     entry.columns.forEach(col => {
                         if (typeof window.setTopRightImage === 'function') {
                             window.setTopRightImage(row, col, imageUrl);
+                        }
+                    });
+                });
+
+                // Apply colors
+                preset.colorsPads.forEach(entry => {
+                    const row = entry.row;
+                    const color = entry.color;
+                    entry.columns.forEach(col => {
+                        if (typeof window.setMartiriaBackgroundColor === 'function') {
+                            window.setMartiriaBackgroundColor(row, col, color);
                         }
                     });
                 });
@@ -483,6 +498,15 @@ document.addEventListener('DOMContentLoaded', function () {
         if (container) {
             const img = container.querySelector('.topright-png');
             if (img) img.src = imageUrl;
+        }
+    };
+
+    window.setMartiriaBackgroundColor = function (rowNumber, martiriaIndex, color) {
+        const row = document.querySelector(`.tone-grid[data-row="${rowNumber}"]`);
+        if (!row) return;
+        const container = row.querySelector(`[data-martiria="${martiriaIndex}"]`);
+        if (container) {
+            container.style.backgroundColor = color;   // ← sets background color
         }
     };
 

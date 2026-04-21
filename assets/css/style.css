@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-.wrapper-ichos {
+.wrapper-media-controls {
     display: flex;
 
     /* ← stacks children vertically */
@@ -13,6 +13,8 @@
     /* centers horizontally (in column mode) */
     justify-content: center;
     /* centers vertically (in column mode) */
+    border: 1px solid rgb(5, 5, 5);
+    margin: 5px;
 }
 
 .wrapper-volume {
@@ -74,55 +76,25 @@
 .martiria {
     position: relative;
     background-color: rgb(196, 199, 196);
-    height: 100%;
-    aspect-ratio: 1 / 1;
     border: 1px solid rgb(5, 5, 5);
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 1;
-    /*min-width: 60px;*/
     transition: background-color 0.2s ease;
-    /* smooth color change */
 
-    min-height: 87px;
-    min-width: 87px;
+    /* Uniform scaling */
+    flex: 1 0 0;
+    aspect-ratio: 1 / 1;
+    height: auto;
+
 }
 
 .martiria-outside {
-    position: relative;
     background-color: rgb(159, 160, 159);
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    border: 1px solid rgb(5, 5, 5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 1;
-    /*min-width: 60px;*/
-    transition: background-color 0.2s ease;
-    /* smooth color change */
-
-    min-height: 87px;
-    min-width: 87px;
 }
 
 .martiria-scale {
-    position: relative;
     background-color: rgb(231, 231, 231);
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    border: 1px solid rgb(5, 5, 5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 1;
-    /*min-width: 60px;*/
-    transition: background-color 0.2s ease;
-    /* smooth color change */
-
-    min-height: 87px;
-    min-width: 87px;
 }
 
 /* Yellow active state */
@@ -130,8 +102,6 @@
     background-color: yellow !important;
     /* !important overrides inline if any */
 }
-
-
 
 
 .image-container {
@@ -172,4 +142,26 @@
     max-width: calc(100% - 8px);
     max-height: calc(100% - 8px);
     object-fit: contain;
+}
+
+.wrapper-tones {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgb(5, 5, 5);
+
+    margin: 5px;
+}
+
+.wrapper-tones p {
+    margin-left: 5px;
+}
+
+
+.preset-btn {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
