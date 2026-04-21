@@ -460,6 +460,32 @@
 
     init().catch(console.error);
 
+    const wrapper = document.getElementById('fullscreenElement');
+    const btn = document.getElementById('fullscreenBtn');
+
+    function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            // Enter full‑screen
+            wrapper.requestFullscreen().catch(err => {
+                console.error(`Full‑screen error: ${err.message}`);
+            });
+        } else {
+            // Exit full‑screen
+            document.exitFullscreen();
+        }
+    }
+
+    btn.addEventListener('click', toggleFullscreen);
+
+    // Optional: change button text when full‑screen state changes
+    document.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement) {
+            btn.textContent = '✕ Exit Full Screen';
+        } else {
+            btn.textContent = '⛶ Full Screen';
+        }
+    });
+
 })();
 
 // ------------------------------------------------------------
