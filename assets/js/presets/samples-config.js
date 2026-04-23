@@ -10,7 +10,7 @@ const sampleProfiles = {
         { url: './assets/audio-samples/melodos/cs4.wav', baseHz: 277.183 },
         { url: './assets/audio-samples/melodos/d4.wav', baseHz: 293.665 },
         { url: './assets/audio-samples/melodos/ds4.wav', baseHz: 311.127 },
-        { url: './assets/audio-samples/melodos/e4.wav', baseHz: 339.628 },
+        { url: './assets/audio-samples/melodos/e4.wav', baseHz: 329.627 },
         { url: './assets/audio-samples/melodos/f4.wav', baseHz: 349.228 },
         { url: './assets/audio-samples/melodos/fs4.wav', baseHz: 369.994 },
         { url: './assets/audio-samples/melodos/g4.wav', baseHz: 391.995 },
