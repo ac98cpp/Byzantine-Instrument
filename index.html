@@ -11,26 +11,24 @@
 </head>
 
 <body>
-    <p>0.2.4</p>
+    <p>0.2.5</p>
     <label for="instrument-select">Sample:</label>
     <select id="instrument-select">
         <option value="voice" selected>melodos</option>
         <!-- Add more options for each profile -->
     </select>
 
-
     <div class="wrapper-media-controls">
-        <div style="margin: 10px 0; display: flex; align-items: center; gap: 10px;">
-            <button id="slider-play-btn" style="width: 60px;">▶ Play</button>
-            <input type="range" id="freq-slider" class="volume-slider" style="width: 200px;" min="20" max="2000"
-                step="1" value="440" disabled>
+        <div style="margin-top: 5px; margin-bottom: 5px;">
+            <button id="slider-play-btn">▶ Play</button>
+            <input type="range" id="freq-slider" style="width: 200px;" min="20" max="2000" step="1" value="440"
+                disabled>
             <span id="freq-display" style="font-size: 14px; min-width: 70px;"></span>
-
-
         </div>
-        <div class="volume-container wrapper-volume" style="margin: 10px">
-            <span class="volume-label">| vol </span>
-            <input type="range" id="master-volume" class="volume-slider" min="0" max="1" step="0.01" value="0.4">
+
+        <div style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px; margin-right: 5px;">
+            <span style="font-size: 14px; margin-left: 5px;">Volume</span>
+            <input type="range" id="master-volume" min="0" max="1" step="0.01" value="0.4">
         </div>
 
     </div>
@@ -38,7 +36,33 @@
 
     <!-- BUTTON SCALES -->
     <div class="wrapper-tones">
-        <p>Ήχος πλ.δ'</p>
+        <div class="rettangle-tone">
+            <p>Ήχος β΄</p>
+        </div>
+
+        <div style="display: flex; gap: 5px;">
+            <button class="preset-btn" id="ichos_b_di_soft-chromatic"
+                style="background-image: url('./assets/symbols/ichos/b/di-soft-chromatic/img-button.png');"></button>
+
+        </div>
+    </div>
+
+    <div class="wrapper-tones">
+        <div class="rettangle-tone">
+            <p>Ήχος πλ. β΄</p>
+        </div>
+
+        <div style="display: flex; gap: 5px;">
+            <button class="preset-btn" id="pl_b_pa_hard-chromatic"
+                style="background-image: url('./assets/symbols/ichos/pl-b/pa-hard-chromatic/img-button.png');"></button>
+
+        </div>
+    </div>
+
+    <div class="wrapper-tones">
+        <div class="rettangle-tone">
+            <p>Ήχος πλ. δ'</p>
+        </div>
 
         <div style="display: flex; gap: 5px;">
             <button class="preset-btn" id="pl_D_Ni"
@@ -48,19 +72,10 @@
         </div>
     </div>
 
-    <div class="wrapper-tones">
-        <p>ήχος β΄</p>
-
-        <div style="display: flex; gap: 5px;">
-            <button class="preset-btn" id="ichos_b_di_soft-chromatic"
-                style="background-image: url('./assets/symbols/ichos/b/di-soft-chromatic/img-button.png');"></button>
-
-        </div>
-    </div>
 
     <div class="scale-wrapper">
         <!-- Row 1 -->
-        <div class="scale-container tone-grid" data-row="1">
+        <div class="scale-container tone-grid" data-row="1" style="border-bottom: 0px;">
             <div data-martiria="1" id="martiria1" class="martiria martiria-outside tone-trigger">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
@@ -69,8 +84,9 @@
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
-            <div data-martiria="3" id="martiria3" class="martiria martiria-outside tone-trigger">
-                <img class="center-png" alt="">
+            <div data-martiria="3" id="martiria3" class="martiria martiria-outside tone-trigger"
+                style="margin-right: 2px;">
+                <img class=" center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
             <div data-martiria="4" id="martiria4" class="martiria tone-trigger">
@@ -110,7 +126,8 @@
                 <img class="topright-png" alt="">
             </div>
 
-            <div data-martiria="12" id="martiria12" class="martiria martiria-outside tone-trigger">
+            <div data-martiria="12" id="martiria12" class="martiria martiria-outside tone-trigger"
+                style="margin-left: 2px;">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
@@ -125,7 +142,7 @@
         </div>
 
         <!-- Row 2 -->
-        <div class="scale-container tone-grid" data-row="2">
+        <div class="scale-container tone-grid" data-row="2" style="border-top: 0px;">
             <div data-martiria="1" id="martiria1" class="martiria martiria-outside tone-trigger">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
@@ -134,7 +151,8 @@
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
-            <div data-martiria="3" id="martiria3" class="martiria martiria-outside tone-trigger">
+            <div data-martiria="3" id="martiria3" class="martiria martiria-outside tone-trigger"
+                style="margin-right: 2px;">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
@@ -175,7 +193,8 @@
                 <img class="topright-png" alt="">
             </div>
 
-            <div data-martiria="12" id="martiria12" class="martiria martiria-outside tone-trigger">
+            <div data-martiria="12" id="martiria12" class="martiria martiria-outside tone-trigger"
+                style="margin-left: 2px;">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
@@ -199,7 +218,8 @@
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
-            <div data-martiria="3" id="martiria3" class="martiria martiria-outside tone-trigger">
+            <div data-martiria="3" id="martiria3" class="martiria martiria-outside tone-trigger"
+                style="margin-right: 2px;">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
@@ -240,7 +260,8 @@
                 <img class="topright-png" alt="">
             </div>
 
-            <div data-martiria="12" id="martiria12" class="martiria martiria-outside tone-trigger">
+            <div data-martiria="12" id="martiria12" class="martiria martiria-outside tone-trigger"
+                style="margin-left: 2px;">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
@@ -255,7 +276,7 @@
         </div>
 
         <!-- Row 4 -->
-        <div class="scale-container tone-grid" data-row="4">
+        <div class="scale-container tone-grid" data-row="4" style="border-bottom: 0px;">
             <div data-martiria="1" id="martiria1" class="martiria martiria-outside tone-trigger">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
@@ -264,7 +285,8 @@
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
-            <div data-martiria="3" id="martiria3" class="martiria martiria-outside tone-trigger">
+            <div data-martiria="3" id="martiria3" class="martiria martiria-outside tone-trigger"
+                style="margin-right: 2px;">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
@@ -305,7 +327,8 @@
                 <img class="topright-png" alt="">
             </div>
 
-            <div data-martiria="12" id="martiria12" class="martiria martiria-outside tone-trigger">
+            <div data-martiria="12" id="martiria12" class="martiria martiria-outside tone-trigger"
+                style="margin-left: 2px;">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
@@ -320,7 +343,7 @@
         </div>
 
         <!-- Row 5 -->
-        <div class="scale-container tone-grid" data-row="5">
+        <div class="scale-container tone-grid" data-row="5" style="border-top: 0px;">
             <div data-martiria="1" id="martiria1" class="martiria martiria-outside tone-trigger">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
@@ -329,7 +352,8 @@
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
-            <div data-martiria="3" id="martiria3" class="martiria martiria-outside tone-trigger">
+            <div data-martiria="3" id="martiria3" class="martiria martiria-outside tone-trigger"
+                style="margin-right: 2px;">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
@@ -370,7 +394,8 @@
                 <img class="topright-png" alt="">
             </div>
 
-            <div data-martiria="12" id="martiria12" class="martiria martiria-outside tone-trigger">
+            <div data-martiria="12" id="martiria12" class="martiria martiria-outside tone-trigger"
+                style="margin-left: 2px;">
                 <img class="center-png" alt="">
                 <img class="topright-png" alt="">
             </div>
