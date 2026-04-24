@@ -7,7 +7,7 @@
 
 .wrapper-media-controls {
     display: flex;
-
+    flex-wrap: wrap;
     /* ← stacks children vertically */
     align-items: center;
     /* centers horizontally (in column mode) */
@@ -145,13 +145,13 @@
 }
 
 .wrapper-tones {
+    max-width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 8px;
     border: 1px solid rgb(5, 5, 5);
     margin: 5px;
-    flex-wrap: wrap;
-    /* ← add this */
 }
 
 .wrapper-tones p {
@@ -162,6 +162,7 @@
 .preset-btn {
     width: 45px;
     height: 45px;
+    min-width: 45px;
     margin-top: 5px;
     margin-bottom: 5px;
     background-repeat: no-repeat;
@@ -183,5 +184,5 @@
 
 .rettangle-tone {
     display: inline-block;
-    min-width: 79px;
+    min-width: 85px;
 }
