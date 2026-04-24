@@ -1,7 +1,88 @@
 (function () {
     "use strict";
 
-    // Strart centered
+    //Metronome
+    const metronomes = [];
+
+    function createClick(audioCtx, downbeat = false) {
+        const ctx = audioCtx;
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(downbeat ? 1200 : 900, now);
+        const duration = downbeat ? 0.06 : 0.04;
+        gain.gain.setValueAtTime(0.7, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + duration);
+    }
+
+    document.querySelectorAll('.metronome-btn').forEach(btn => {
+        const instance = {
+            btn: btn,
+            isPlaying: false,
+            timeoutId: null,
+            beatNumber: 0,
+            audioCtx: null,
+            currentBPM: 120,
+            scheduleNextBeat: function () {
+                if (!this.isPlaying) return;
+                this.beatNumber++;
+                const isDownbeat = (this.beatNumber % 4 === 1);
+                createClick(this.audioCtx, isDownbeat);
+                const interval = 60000 / this.currentBPM;
+                this.timeoutId = setTimeout(() => this.scheduleNextBeat(), interval);
+            },
+            start: function () {
+                // Stop all other metronomes before starting this one
+                metronomes.forEach(m => {
+                    if (m !== this && m.isPlaying) {
+                        m.stop();
+                    }
+                });
+
+                if (this.isPlaying) return;
+                if (this.audioCtx && this.audioCtx.state === 'suspended') {
+                    this.audioCtx.resume();
+                } else if (!this.audioCtx) {
+                    this.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+
+                const bpmFromButton = parseInt(this.btn.dataset.bpm, 10);
+                this.currentBPM = (isNaN(bpmFromButton) || bpmFromButton < 1) ? 120 : bpmFromButton;
+
+                this.isPlaying = true;
+                this.beatNumber = 0;
+                this.btn.style.backgroundColor = 'yellow';
+                this.scheduleNextBeat();
+            },
+            stop: function () {
+                if (!this.isPlaying) return;
+                this.isPlaying = false;
+                if (this.timeoutId) {
+                    clearTimeout(this.timeoutId);
+                    this.timeoutId = null;
+                }
+                this.btn.style.backgroundColor = '';
+                this.beatNumber = 0;
+            },
+            toggle: function () {
+                if (this.isPlaying) {
+                    this.stop();
+                } else {
+                    this.start();
+                }
+            }
+        };
+
+        btn.addEventListener('click', () => instance.toggle());
+        metronomes.push(instance);
+    });
+
+    // Start centered
     function centerScroll(wrapperSelector) {
         const wrapper = document.querySelector(wrapperSelector);
         if (!wrapper) return;

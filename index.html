@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <p>0.2.6</p>
+    <p>0.3.0</p>
     <label for="instrument-select">Sample:</label>
     <select id="instrument-select">
         <option value="voice" selected>melodos</option>
@@ -20,7 +20,7 @@
 
     <div class="wrapper-media-controls">
         <div style="margin-top: 5px; margin-bottom: 5px;">
-            <button id="slider-play-btn">▶ Play</button>
+            <button id="slider-play-btn" class="preset-btn">▶ Play</button>
             <input type="range" id="freq-slider" style="width: 200px;" min="20" max="2000" step="1" value="440"
                 disabled>
             <span id="freq-display" style="font-size: 14px; min-width: 70px;"></span>
@@ -32,9 +32,56 @@
         </div>
 
     </div>
-    <!-- Frequency Slider Section (super minimal) -->
+
+    <!-- Metronome-->
+    <div class="wrapper-tones" style="display: flex; align-items: center; justify-content: center;">
+        <div style="display: flex; ">
+            <button class="preset-btn metronome-btn" data-bpm="40"
+                style="background-image: url('./assets/symbols/chronos/chronos_1.png');"></button>
+        </div>
+        <div style="display: flex; ">
+            <button class="preset-btn metronome-btn" data-bpm="56"
+                style="background-image: url('./assets/symbols/chronos/chronos_2.png');"></button>
+        </div>
+        <div style="display: flex; ">
+            <button class="preset-btn metronome-btn" data-bpm="80"
+                style="background-image: url('./assets/symbols/chronos/chronos_3.png');"></button>
+        </div>
+        <div style="display: flex; ">
+            <button class="preset-btn metronome-btn" data-bpm="100"
+                style="background-image: url('./assets/symbols/chronos/chronos_4.png');"></button>
+        </div>
+        <div style="display: flex; ">
+            <button class="preset-btn metronome-btn" data-bpm="130"
+                style="background-image: url('./assets/symbols/chronos/chronos_5.png');"></button>
+        </div>
+        <div style="display: flex; ">
+            <button class="preset-btn metronome-btn" data-bpm="168"
+                style="background-image: url('./assets/symbols/chronos/chronos_6.png');"></button>
+        </div>
+        <div style="display: flex; ">
+            <button class="preset-btn metronome-btn" data-bpm="208"
+                style="background-image: url('./assets/symbols/chronos/chronos_7.png');"></button>
+        </div>
+        <div style="display: flex; ">
+            <button class="preset-btn metronome-btn" data-bpm="250"
+                style="background-image: url('./assets/symbols/chronos/chronos_8.png');"></button>
+        </div>
+    </div>
 
     <!-- BUTTON SCALES -->
+    <div class="wrapper-tones">
+        <div class="rettangle-tone">
+            <p>Ήχος α΄</p>
+        </div>
+
+        <div style="display: flex; gap: 5px;">
+            <button class="preset-btn" id="ichos_a_pa"
+                style="background-image: url('./assets/symbols/ichos/a/pa/ichos_a_d_pa.png');"></button>
+
+        </div>
+    </div>
+
     <div class="wrapper-tones">
         <div class="rettangle-tone">
             <p>Ήχος β΄</p>

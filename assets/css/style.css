@@ -161,7 +161,8 @@
 .preset-btn {
     width: 45px;
     height: 45px;
-    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -180,6 +181,6 @@
 }
 
 .rettangle-tone {
-    /* border: 1px solid rgb(5, 5, 5); */
+    display: inline-block;
     min-width: 79px;
 }
